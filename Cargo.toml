@@ -1,0 +1,30 @@
+[package]
+name = "rust-tdd-learning"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "A Japanese TDD-first Rust learning repository"
+license = "MIT"
+
+[lib]
+name = "rust_tdd_learning"
+path = "src/lib.rs"
+
+[dependencies]
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+all = "deny"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+
+[features]
+default = []
+
+# Verification: cargo fmt --check && cargo clippy --all-targets --all-features -- -D warnings && cargo test --all-targets --all-features
+# The project intentionally has no third-party dependencies.
